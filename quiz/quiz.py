@@ -26,7 +26,7 @@ def ask_questions():
     
     for question, answer in questions_and_answers:
         guess = input(question + "> ")
-        if guess == answer:
+        if guess.upper() == answer.upper(): #Makes the game not case sensitive---------
             score += 1
             print("Right!")
             print(score)
@@ -48,6 +48,8 @@ def add_question():
     file.write(answer + "\n")
     file.close()
     
+
+#---------------------Initialize Game---------------------------    
 def game_loop():
     while True:
         option = show_menu()
